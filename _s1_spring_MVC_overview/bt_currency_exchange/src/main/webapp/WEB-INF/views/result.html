@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body>
+<div class="col-4">
+<form action="/exchange" method="post">
+    <div class="form-group">
+        <label>Amount</label>
+        <p th:text="${amount}"></p>
+
+    </div>
+    <div class="form-group">
+        <label>Rate</label>
+        <p th:text="${rate}"></p>
+
+    </div>
+    <div class="form-group">
+        <label>Answer</label>
+        <p th:text="${ans}"></p>
+    </div>
+</form>
+</div>
+
+
+<!--Thu vien jQuery da nen phuc vu cho bootstrap.min.js-->
+<script src = "lib/jquery-3.5.1.min.js"></script>
+<!-- Thu vien popper da nen phuc vu cho bootstrap.min.js-->
+<script src = "lib/popper.min.js"></script>
+<!-- Thu vien popper da nen phuc vu cho bootstrap.min.js-->
+<script src = "js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Result translate</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="col-4">
+        <a href="/" class="button btn">Back to translate page</a>
+            <table id="table" class="table table-striped table-bordered" style="width: 100%" >
+                <thead>
+                <tr>
+                    <td>English word</td>
+                    <td th:text="${dictionary.english}" class="text-input"></td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:if="${dictionary.vietnam}">
+                    <td>Translate to Vietnam </td>
+                    <td th:text="${dictionary.vietnam}" class="text-input"></td>
+                </tr>
+                <tr th:unless="${dictionary.vietnam}">
+                    <td>Translate to Vietnam </td>
+                    <td class="small" style="color: red">Not found</td>
+                </tr>
+                </tbody>
+            </table>
+    </div>
+</div>
+
+
+<!--__+__+__+__+__+__+__+__+__+__+__+__+__-->
+<!--Thu vien jQuery da nen phuc vu cho bootstrap.min.js&ndash;-->
+<script src = "lib/jquery-3.5.1.min.js"></script>
+<!--Thu vien popper da nen phuc vu cho bootstrap.min.js&ndash;-->
+<script src = "lib/popper.min.js"></script>
+<!--Thu vien popper da nen phuc vu cho bootstrap.min.js&ndash;-->
+<script src = "js/bootstrap.min.js"></script>
+</body>
+</html>
