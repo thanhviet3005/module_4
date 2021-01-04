@@ -15,23 +15,20 @@ public class SandwichServlet {
     }
 
 @RequestMapping(value = "/sandwich", method = RequestMethod.POST)
-    public String showSandwichCondiment(@RequestParam(value = "condiment") String[] condiment,
+    public String showSandwichCondiment(@RequestParam(value = "condiment", required = false) String[] condiment,
                                         Model model){
-        StringBuilder stringBuilder = new StringBuilder();
+    StringBuffer stringBuffer = new StringBuffer();
+    if(condiment!=null){
         for (String str: condiment) {
-            if(str!=null){
-                stringBuilder.append(str+", ");
-            }
+            stringBuffer.append(str+", ");
         }
-        String str = stringBuilder.toString();
-        if(str!=null){
-            model.addAttribute("str", str);
-            return "/result";
-        }else{
-            str = "not choose condiment";
-            model.addAttribute("str", str);
-            return "/result";
-        }
+        String str = stringBuffer.toString();
+        model.addAttribute("str", str);
+        return "/result";
+    }else{
+        return "/input";
+    }
+
     }
 
 }
