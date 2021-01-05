@@ -31,6 +31,12 @@
                     </td>
                 </tr>
                 <tr>
+                    <td>
+<%--                        <c:out value="hello world"></c:out>--%>
+
+                    </td>
+                </tr>
+                <tr>
                     <td><input type="submit" name="cal" value="Addition" class="btn btn-primary"></td>
                     <td><input type="submit" name="cal" value="Subtraction" class="btn btn-primary"></td>
                     <td><input type="submit" name="cal" value="Multiple" class="btn btn-primary"></td>
