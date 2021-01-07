@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout::head">
+</head>
+<body>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<!--<%&#45;&#45; Thu vien jQuery da nen phuc vu cho bootstrap.min.js&#45;&#45;%>-->
+<script src = "lib/jquery-3.5.1.min.js"></script>
+<!--<%&#45;&#45; Thu vien popper da nen phuc vu cho bootstrap.min.js&#45;&#45;%>-->
+<script src = "lib/popper.min.js"></script>
+<!--<%&#45;&#45; Thu vien popper da nen phuc vu cho bootstrap.min.js&#45;&#45;%>-->
+<script src = "js/bootstrap.min.js"></script>
+
+<div class="container">
+    <div class="notify">
+        <div th:if="${success}">
+            <span th:text="${success}"></span>
+        </div>
+    </div>
+    <a th:href="@{/product/create}" class="btn btn-primary">Create new product</a>
+    <table class="table table-hover table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Image</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="product:${productList}">
+            <td  scope="row" th:text="${product.getIdProduct()}"></td>
+            <td th:text="${product.getNameProduct()}"></td>
+            <td th:text="${product.getPriceProduct()}"></td>
+            <td><img th:src="${product.getImgProduct()}" style="height: 50px"></td>
+<!--            <td th:text="${product.getImgProduct()}"></td>-->
+            <td th:text="${product.getQuantity()}"></td>
+            <td>
+                <a th:href="@{/product/{id}/edit(id=${product.getIdProduct()})}" class="btn btn-primary" href="#" role="button">Edit</a>
+                <a th:href="@{/product/{id}/remove(id=${product.getIdProduct()})}" class="btn btn-primary" href="#" role="button">Delete</a>
+                <a th:href="@{/product/{id}/detail(id=${product.getIdProduct()})}" class="btn btn-primary" href="#" role="button">View</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+</body>
+</html>

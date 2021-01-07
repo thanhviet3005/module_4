@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout::head">
+</head>
+<body>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<!--<%-- Thu vien jQuery da nen phuc vu cho bootstrap.min.js--%>-->
+<script src = "lib/jquery-3.5.1.min.js"></script>
+<!--<%-- Thu vien popper da nen phuc vu cho bootstrap.min.js--%>-->
+<script src = "lib/popper.min.js"></script>
+<!--<%-- Thu vien popper da nen phuc vu cho bootstrap.min.js--%>-->
+<script src = "js/bootstrap.min.js"></script>
+
+<div class="container">
+    <a th:href="@{/customer/create}" class="btn btn-primary">Create new customer</a>
+
+    <table class="table table-hover table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Address</th>
+            <th scope="col">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="customer:${customerList}">
+            <td  scope="row" th:text="${customer.getId()}"></td>
+            <td th:text="${customer.getName()}"></td>
+            <td th:text="${customer.getEmail()}"></td>
+            <td th:text="${customer.getAddress()}"></td>
+            <td>
+                <a th:href="@{/customer/{id}/edit(id=${customer.getId()})}" class="btn btn-primary" href="#" role="button">Edit</a>
+                <a th:href="@{/customer/{id}/delete(id=${customer.getId()})}" class="btn btn-primary" href="#" role="button">Delete</a>
+                <a th:href="@{/customer/{id}/view(id=${customer.getId()})}" class="btn btn-primary" href="#" role="button">View</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<footer th:replace="/layout::footer"></footer>
+
+
+</body>
+</html>
