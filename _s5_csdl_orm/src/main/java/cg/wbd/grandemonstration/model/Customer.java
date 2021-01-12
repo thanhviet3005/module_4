@@ -70,6 +70,26 @@ public class Customer implements Cloneable {
         return customer;
     }
 
+    //__+__+__+__+__+__+__+__+
+    //    Ví dụ về phương thức clone lại đối tượng để tạo ra, tiết kiệm bộ nhớ thay vì tạo ra một
+    // đối tượng mới hoàn toàn như ở ví dụ dưới
+    //    public Object clone() throws CloneNotSupportedException {
+    //        return super.clone();
+    //    }
+    //
+    //    public static void main(String args[]) {
+    //        try {
+    //            Student s1 = new Student(101, "An");
+    //            Student s2 = (Student) s1.clone();
+    //            System.out.println(s1.rollno + " " + s1.name);
+    //            System.out.println(s2.rollno + " " + s2.name);
+    //        } catch (CloneNotSupportedException c) {
+    //        }
+
+    //__+__+__+__+__+__+__+__+
+    //__+__+__+__+__+__+__+__+
+
+
     @Override
     public String toString() {
         return "Customer{" +

@@ -1,0 +1,204 @@
+** Entity
+
+@Entity
+public class Employee {
+  private @Id
+  @GeneratedValue
+  Long id;
+  private String name;
+  private String dept;
+  private int salary;
+    .............
+}
+
+//__+__+__+__+__+__+__+__+__+__+__+__ 
+** Repository
+public interface EmployeeRepository extends PagingAndSortingRepository<Employee, Long> {
+}
+
+//__+__+__+__+__+__+__+__+__+__+__+__ 
+** JavaConfig
+
+@ComponentScan
+@Configuration
+@EnableWebMvc
+@EnableJpaRepositories
+@EnableSpringDataWebSupport
+public class AppConfig {
+
+  @Bean
+  public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
+      LocalContainerEntityManagerFactoryBean factory =
+              new LocalContainerEntityManagerFactoryBean();
+      factory.setPersistenceProviderClass(HibernatePersistenceProvider.class);
+      return factory;
+  }
+
+  @Bean
+  public PlatformTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
+      JpaTransactionManager txManager = new JpaTransactionManager();
+      txManager.setEntityManagerFactory(entityManagerFactory);
+      return txManager;
+  }
+
+  //thymeleaf view configurations
+  @Autowired
+  ApplicationContext applicationContext;
+
+  @Bean
+  public SpringTemplateEngine templateEngine() {
+      SpringTemplateEngine templateEngine = new SpringTemplateEngine();
+      templateEngine.setTemplateResolver(templateResolver());
+      return templateEngine;
+  }
+
+  @Bean
+  public SpringResourceTemplateResolver templateResolver() {
+      SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
+      templateResolver.setApplicationContext(this.applicationContext);
+      templateResolver.setPrefix("/WEB-INF/views/");
+      templateResolver.setSuffix(".html");
+      return templateResolver;
+  }
+
+  @Bean
+  public ViewResolver viewResolver() {
+      ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
+      viewResolver.setTemplateEngine(templateEngine());
+      return viewResolver;
+  }
+}
+
+//__+__+__+__+__+__+__+__+__+__+__+__ 
+** Spring MVC controller
+
+@Controller
+public class EmployeeController {
+
+  @Autowired
+  private EmployeeRepository repository;
+
+  @GetMapping("/employees")
+  public String getEmployees(@PageableDefault(size = 10) Pageable pageable,
+                             Model model) {
+      Page<Employee> page = repository.findAll(pageable);
+      model.addAttribute("page", page);
+      return "employee-page";
+  }
+}
+
+//__+__+__+__+__+__+__+__+__+__+__+__ 
+** Thymeleaf view
+src/main/webapp/WEB-INF/views/employee-page.html
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<style>
+table{width:100%;}
+table td, table th { border: 1px solid grey;}
+table th { background: #eee;}
+.pagination-div{user-select: none;}
+.pagination-div span{border-radius:3px;border:1px solid #999;
+   padding:5px;margin:10px 0px 0px 10px;display:inline-block}
+span.selected{background:#ccf;}
+</style>
+</head>
+<body>
+<h2>Employees</h2>
+<table>
+    <tr><th>Id</th>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Salary</th>
+    </tr>
+    <tr th:each="employee : ${page.content}">
+        <td th:text="${employee.id}"></td>
+        <td th:text="${employee.name}"></td>
+        <td th:text="${employee.dept}"></td>
+        <td th:text="${employee.salary}"></td>
+    </tr>
+</table>
+
+<div class="pagination-div">
+    <span th:if="${page.hasPrevious()}">
+        <a th:href="@{/employees(page=${page.number-1},size=${page.size})}">Previous</a>
+    </span>
+    <th:block th:each="i: ${#numbers.sequence(0, page.totalPages - 1)}">
+        <span th:if="${page.number == i}" class="selected">[[${i}+1]]</span>
+        <span th:unless="${page.number == i}">
+             <a th:href="@{/employees(page=${i},size=${page.size})}">[[${i}+1]]</a>
+        </span>
+    </th:block>
+    <span th:if="${page.hasNext()}">
+        <a th:href="@{/employees(page=${page.number+1},size=${page.size})}">Next</a>
+    </span>
+</div>
+</body>
+</html>
+
+//__+__+__+__+__+__+__+__+__+__+__+__ 
+** Dependencies and Technologies Used:
+
+spring-data-jpa 2.0.7.RELEASE: Spring Data module for JPA repositories.
+Uses org.springframework:spring-context version 5.0.6.RELEASE
+spring-webmvc 5.0.6.RELEASE: Spring Web MVC.
+javax.servlet-api 3.0.1 Java Servlet API
+hibernate-core 5.3.1.Final: Hibernate's core ORM functionality.
+Implements javax.persistence:javax.persistence-api version 2.2
+h2 1.4.197: H2 Database Engine.
+thymeleaf-spring5 3.0.9.RELEASE: Modern server-side Java template engine for both web and standalone environments.
+jackson-databind 2.9.5: General data-binding functionality for Jackson: works on core streaming API.
+JDK 1.8
+Maven 3.3.9
+
+
+
+//__+__+__+__+__+__+__+__+__+__+__+__ 
+
+!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<style>
+table{width:100%;}
+table td, table th { border: 1px solid grey;}
+table th { background: #eee;}
+.pagination-div{user-select: none;}
+.pagination-div span{border-radius:3px;border:1px solid #999;
+   padding:5px;margin:10px 0px 0px 10px;display:inline-block}
+span.selected{background:#ccf;}
+</style>
+</head>
+<body>
+<h2>Employees</h2>
+<table>
+    <tr><th>Id</th>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Salary</th>
+    </tr>
+    <tr th:each="employee : ${page.content}">
+        <td th:text="${employee.id}"></td>
+        <td th:text="${employee.name}"></td>
+        <td th:text="${employee.dept}"></td>
+        <td th:text="${employee.salary}"></td>
+    </tr>
+</table>
+
+<div class="pagination-div">
+    <span th:if="${page.hasPrevious()}">
+        <a th:href="@{/employees(page=${page.number-1},size=${page.size})}">Previous</a>
+    </span>
+    <th:block th:each="i: ${#numbers.sequence(0, page.totalPages - 1)}">
+        <span th:if="${page.number == i}" class="selected">[[${i}+1]]</span>
+        <span th:unless="${page.number == i}">
+             <a th:href="@{/employees(page=${i},size=${page.size})}">[[${i}+1]]</a>
+        </span>
+    </th:block>
+    <span th:if="${page.hasNext()}">
+        <a th:href="@{/employees(page=${page.number+1},size=${page.size})}">Next</a>
+    </span>
+</div>
+</body>
+</html>
