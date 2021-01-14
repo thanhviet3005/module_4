@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/customer/layout::head">
+</head>
+<body>
+
+<div class="container">
+    <div class="notify">
+        <div th:if="${success}">
+            <span th:text="${success}"></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <a th:href="@{/customer/create}" class="btn btn-primary">Create new customer</a>
+        </div>
+        <div class="col-sm-4">
+            <form  th:action="@{/customer/search}" method="post">
+                <input type="text" th:name="searchName" placeholder="Search by name">
+                <button type="submit" class="btn btn-info">Search</button>
+            </form>
+        </div>
+    </div>
+
+    <table class="table table-hover table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">First name</th>
+            <th scope="col">Last name</th>
+            <th scope="col">Province</th>
+            <th scope="col">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="customer:${customerList}">
+            <td  scope="row" th:text="${customer.getId()}"></td>
+            <td th:text="${customer.getFirstName()}"></td>
+            <td th:text="${customer.getLastName()}"></td>
+            <td th:text="${customer.province.provinceName}"></td>
+            <td>
+                <a th:href="@{/customer/{id}/update(id=${customer.getId()})}"
+                   class="btn btn-primary" href="#" role="button">Edit</a>
+                <a th:href="@{/customer/{id}/remove(id=${customer.getId()})}"
+                   class="btn btn-primary" href="#" role="button">Delete</a>
+                <a th:href="@{/customer/{id}/detail(id=${customer.getId()})}"
+                   class="btn btn-primary" href="#" role="button">View</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="pagination-div">
+    <span th:if="${customerList.hasPrevious()}">
+        <a th:href="@{/(page=${customerList.number - 1},size=${customerList.size})}">Previous</a>
+    </span>
+    <th:block th:each="i: ${#numbers.sequence(0, customerList.totalPages - 1)}">
+        <span th:if="${customerList.number == i}" class="selected">[[${i}+1]]</span>
+        <span th:unless="${customerList.number == i}">
+             <a th:href="@{/(page=${i},size=${customerList.size})}">[[${i}+1]]</a>
+        </span>
+    </th:block>
+    <span th:if="${customerList.hasNext()}">
+        <a th:href="@{/(page=${customerList.number+1},size=${customerList.size})}">Next</a>
+    </span>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/blog/layout::head">
+</head>
+<body>
+
+<div class="container">
+    <div class="notify">
+        <div th:if="${success}">
+            <span th:text="${success}"></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <a th:href="@{/blog/createNew}" class="btn btn-primary">Create new blog</a>
+        </div>
+        <div class="col-sm-4">
+            <form th:action="@{/blog/search}" method="post">
+                <input type="text" th:name="searchName" placeholder="Search by name">
+                <button type="submit" class="btn btn-info">Search</button>
+            </form>
+        </div>
+    </div>
+
+    <table class="table table-hover table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Content</th>
+            <th scope="col">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="blog:${blogList}">
+            <td  scope="row" th:text="${blog.getId()}"></td>
+            <td th:text="${blog.getContent()}"></td>
+            <td>
+                <a th:href="@{/blog/{id}/update(id=${blog.getId()})}"
+                   class="btn btn-primary" href="#" role="button">Edit</a>
+                <a th:href="@{/blog/{id}/remove(id=${blog.getId()})}"
+                   class="btn btn-primary" href="#" role="button">Delete</a>
+                <a th:href="@{/blog/{id}/detail(id=${blog.getId()})}"
+                   class="btn btn-primary" href="#" role="button">View</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<!--<div class="pagination-div">-->
+<!--    <span th:if="${blogList.hasPrevious()}">-->
+<!--        <a th:href="@{/(page=${blogList.number - 1},size=${blogList.size})}">Previous</a>-->
+<!--    </span>-->
+<!--    <th:block th:each="i: ${#numbers.sequence(0, blogList.totalPages - 1)}">-->
+<!--        <span th:if="${blogList.number == i}" class="selected">[[${i}+1]]</span>-->
+<!--        <span th:unless="${blogList.number == i}">-->
+<!--             <a th:href="@{/(page=${i},size=${blogList.size})}">[[${i}+1]]</a>-->
+<!--        </span>-->
+<!--    </th:block>-->
+<!--    <span th:if="${blogList.hasNext()}">-->
+<!--        <a th:href="@{/(page=${blogList.number+1},size=${blogList.size})}">Next</a>-->
+<!--    </span>-->
+<!--</div>-->
+
+
+
+</body>
+</html>

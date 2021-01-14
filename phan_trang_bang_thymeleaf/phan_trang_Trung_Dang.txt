@@ -1,0 +1,75 @@
+public interface StudentRepository extends JpaRepository<Student, Integer> {
+    Page<Student> findByNameContainingAndGender(String name, int gender, Pageable pageable);
+    Page<Student> findByNameContainingAndIdGreaterThanEqual(String name, int id, Pageable pageable);
+
+    @Query("select s from Student s where s.name =:input and s.id >=2")
+    Page<Student> findByName2(@Param("input") String name, Pageable pageable);
+}
+
+//___+___+___+___+___+___+___+___+___
+public interface StudentService {
+    List<Student> findAll();
+    Page<Student> findAll(Pageable pageable);
+
+    void save(Student student);
+    void update(Student student);
+    Student findById(int id);
+
+    Page<Student> findByInputText(String inputSearch, Pageable pageable);
+}
+
+//___+___+___+___+___+___+___+___+___
+@Service
+@Primary
+public class StudentServiceImpl implements StudentService {
+
+    @Autowired
+    StudentRepository studentRepository;
+    @Override
+    public List<Student> findAll() {
+        return studentRepository.findAll();
+    }
+
+    @Override
+    public Page<Student> findAll(Pageable pageable) {
+        return studentRepository.findAll(pageable);
+    }
+
+    @Override
+    public void save(Student student) {
+        studentRepository.save(student);
+    }
+
+    @Override
+    public void update(Student student) {
+        studentRepository.save(student);
+    }
+
+    @Override
+    public Student findById(int id) {
+        return studentRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public Page<Student> findByInputText(String inputSearch, Pageable pageable) {
+        return studentRepository.findByName2(inputSearch, pageable);
+    }
+}
+
+@Controller
+@RequestMapping({"","/student"})
+public class StudentController {
+
+    @Autowired
+    StudentService studentService ;
+
+    @GetMapping(value = {"","/list"})
+    public ModelAndView studentList(@PageableDefault(value = 2)Pageable pageable){
+        return new ModelAndView("/student/list", "studentList", studentService.findAll(pageable));
+    }
+
+    @GetMapping("/search")
+    public ModelAndView searchByText(@RequestParam String inputSearch, @PageableDefault(value = 10)Pageable pageable){
+        return new ModelAndView("/student/list", "studentList", studentService.findByInputText(inputSearch, pageable));
+    }
+}

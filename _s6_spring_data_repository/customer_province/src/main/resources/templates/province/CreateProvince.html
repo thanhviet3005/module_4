@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/customer/layout::head">
+</head>
+<body>
+<div class="container">
+    <div class="col-4">
+        <form th:action="@{/province/create}" method="post" th:object="${province}">
+            <div class="form-group">
+                <label for="province_id">Id</label>
+                <input id="province_id" type="text" class="form-control" th:field="*{id}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="province_name">Province name</label>
+                <input id="province_name" type="text" class="form-control" th:field="*{provinceName}" required >
+            </div>
+            <div>
+                <input type="submit" value="Add" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

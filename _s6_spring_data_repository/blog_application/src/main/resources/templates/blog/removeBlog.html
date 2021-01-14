@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/blog/layout::head">
+</head>
+<body>
+
+<div class="container">
+    <div class="col-4">
+        <form th:action="@{/blog/remove}" method="post" th:object="${blog}">
+            <div class="form-group">
+                <label>Id</label>
+                <input type="text" class="form-control" th:field="*{id}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="blog_content">Blog content</label>
+                <input id="blog_content" type="text" class="form-control" th:field="*{content}" readonly >
+            </div>
+            <div>
+                <input type="submit" value="Remove" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+</div>
+
+
+</body>
+</html>

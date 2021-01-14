@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout::head">
+</head>
+<body>
+
+<div class="container">
+    <div class="col-4">
+        <form th:action="@{/user/create}" method="post" th:object="${user}">
+            <div class="form-group">
+                <label for="user_id">Id</label>
+                <input id="user_id" type="text" class="form-control" th:field="*{id}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="user_firstName">First name</label>
+                <input id="user_firstName" type="text" class="form-control" th:field="*{firstName}" required >
+                <div style="color: red" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></div>
+            </div>
+            <div class="form-group">
+                <label for="user_lastName">Last name</label>
+                <input id="user_lastName" type="text" class="form-control" th:field="*{lastName}" required>
+                <div style="color: red" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></div>
+            </div>
+            <div class="form-group">
+                <label for="user_age">Age</label>
+                <input id="user_age" type="text" class="form-control" th:field="*{age}" required>
+                <div style="color: red" th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></div>
+            </div>
+            <div class="form-group">
+                <label for="user_phone">Phone number</label>
+                <input id="user_phone" type="text" class="form-control" th:field="*{phoneNumber}" required>
+                <div style="color: red" th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"></div>
+            </div>
+            <div class="form-group">
+                <label for="user_email">Email address</label>
+                <input id="user_email" type="text" class="form-control" th:field="*{email}">
+                <div style="color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+            </div>
+            <div>
+                <input type="submit" value="Add" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

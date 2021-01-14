@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/customer/layout::head">
+</head>
+<body>
+
+<div class="container">
+    <div class="col-4">
+        <form th:action="@{/customer/create}" method="post" th:object="${customer}">
+            <div class="form-group">
+                <label for="customer_id">Id</label>
+                <input id="customer_id" type="text" class="form-control" th:field="*{id}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="customer_firstName">First name</label>
+                <input id="customer_firstName" type="text" class="form-control" th:field="*{firstName}" required >
+            </div>
+            <div class="form-group">
+                <label for="customer_lastName">Last name</label>
+                <input id="customer_lastName" type="text" class="form-control" th:field="*{lastName}" required>
+            </div>
+            <div class="form-group">
+                <label for="customer_province">Province</label>
+                <select th:field="*{province}" id="customer_province">
+                    <option th:each="province : ${provinceList}" th:value="${province.id}" th:text="${province.provinceName}">
+                    </option>
+                </select>
+            </div>
+            <div>
+                <input type="submit" value="Add" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+</div>
+
+
+</body>
+</html>

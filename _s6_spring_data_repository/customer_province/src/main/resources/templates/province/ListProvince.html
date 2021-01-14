@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/customer/layout::head">
+</head>
+<body>
+
+<div class="container">
+    <div class="notify">
+        <div th:if="${success}">
+            <span th:text="${success}"></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <a th:href="@{/province/create}" class="btn btn-primary">Create new province</a>
+        </div>
+    </div>
+
+    <table class="table table-hover table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="province:${provinceList}">
+            <td  scope="row" th:text="${province.getId()}"></td>
+            <td th:text="${province.getProvinceName()}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<!--<div class="pagination-div">-->
+<!--    <span th:if="${provinceList.hasPrevious()}">-->
+<!--        <a th:href="@{/province/(page=${provinceList.number - 1},size=${provinceList.size})}">Previous</a>-->
+<!--    </span>-->
+<!--    <th:block th:each="i: ${#numbers.sequence(0, provinceList.totalPages - 1)}">-->
+<!--        <span th:if="${provinceList.number == i}" class="selected">[[${i}+1]]</span>-->
+<!--        <span th:unless="${provinceList.number == i}">-->
+<!--             <a th:href="@{/province/(page=${i},size=${provinceList.size})}">[[${i}+1]]</a>-->
+<!--        </span>-->
+<!--    </th:block>-->
+<!--    <span th:if="${provinceList.hasNext()}">-->
+<!--        <a th:href="@{/province/(page=${provinceList.number+1},size=${provinceList.size})}">Next</a>-->
+<!--    </span>-->
+<!--</div>-->
+
+</body>
+</html>
