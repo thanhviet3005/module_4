@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="66de59f1-2fc2-4ec7-a83c-55c22e010fe7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../library/src/main/java/c0920g1/config/ValidationConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../library/src/main/java/c0920g1/controller/BillLendController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../library/src/main/java/c0920g1/controller/BookController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../library/src/main/java/c0920g1/controller/StudentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../library/src/main/java/c0920g1/model/BillLend.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../library/src/main/java/c0920g1/model/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../library/src/main/java/c0920g1/model/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../library/src/main/java/c0920g1/repository/BillLendRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../library/src/main/java/c0920g1/repository/BookRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../library/src/main/java/c0920g1/repository/StudentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../library/src/main/java/c0920g1/service/BillLendService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../library/src/main/java/c0920g1/service/BookService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../library/src/main/java/c0920g1/service/Impl/BillLendServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../library/src/main/java/c0920g1/service/Impl/BookServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../library/src/main/java/c0920g1/service/Impl/StudentServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../library/src/main/java/c0920g1/service/Service.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../library/src/main/java/c0920g1/service/StudentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../library/src/main/java/c0920g1/validation/ValidationMassage.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../library/src/main/resources/templates/student/CreateStudent.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_s8_validation/validate_form_register/src/main/java/c0920g1/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../_s8_validation/validate_form_register/src/main/java/c0920g1/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../database_module_4/demojpa.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../database_module_4/demojpa.sql" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1n9qqDMew4cQyF14vzWI7YEjeVq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="66de59f1-2fc2-4ec7-a83c-55c22e010fe7" name="Default Changelist" comment="" />
+      <created>1610812842190</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1610812842190</updated>
+      <workItem from="1610812843970" duration="804000" />
+      <workItem from="1610813687093" duration="274000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="232" y="0" key="#Notifications" timestamp="1610813863393">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="232" y="0" key="#Notifications/0.0.1280.680@0.0.1280.680" timestamp="1610813863393" />
+    <state x="420" y="80" key="FileChooserDialogImpl" timestamp="1610813924451">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="420" y="80" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1610813924451" />
+    <state x="333" y="164" key="com.intellij.ide.util.TipDialog" timestamp="1610813688377">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="333" y="164" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1610813688377" />
+    <state x="95" y="41" key="new project wizard" timestamp="1610813960248">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="95" y="41" key="new project wizard/0.0.1280.680@0.0.1280.680" timestamp="1610813960248" />
+  </component>
+</project>

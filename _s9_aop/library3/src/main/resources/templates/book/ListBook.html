@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/book/layout::head">
+</head>
+<body>
+
+<div class="container">
+    <div class="notify">
+        <div th:if="${statusMsg}">
+            <span th:text="${statusMsg}"></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <a th:href="@{/book/create}" class="btn btn-primary">Create new book</a>
+        </div>
+    </div>
+    <table class="table table-hover table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Book name</th>
+            <th scope="col">Number</th>
+            <th scope="col">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="book:${bookList}">
+            <td  scope="row" th:text="${book.getId()}"></td>
+            <td th:text="${book.getBookName()}"></td>
+            <td th:text="${book.getQuantity()}"></td>
+            <td>
+                <a th:href="@{/book/{id}/borrow(id=${book.getId()})}"
+                   class="btn btn-primary" href="#" role="button">Borrow</a>
+                <a th:href="@{/book/{id}/return(id=${book.getId()})}"
+                   class="btn btn-primary" href="#" role="button">Return</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+</body>
+</html>

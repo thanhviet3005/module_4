@@ -8,10 +8,7 @@
     <div>
         <label for="id_name">Name:</label>
         <input type="text"  th:field="*{name}" id="id_name"/>
-        <div style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
-		
-		                <td th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Name Error</td>
-		
+        <div style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>		
     </div>
     <div>
         <label>Gender:</label>

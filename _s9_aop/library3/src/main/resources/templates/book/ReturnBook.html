@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/book/layout::head">
+</head>
+<body>
+
+
+<div class="container">
+    <div class="col-4">
+        <a th:href="@{/}" class="btn btn-primary">Back to list book</a>
+        <div class="notify">
+            <div th:if="${statusMsg}">
+                <span th:text="${statusMsg}"></span>
+            </div>
+        </div>
+        <form th:action="@{/book/return}" method="post" th:object="${book}" >
+            <div class="form-group">
+                <label for="book_id">Id</label>
+                <input id="book_id" type="text" class="form-control" th:field="*{id}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="book_name">Book name</label>
+                <input id="book_name" type="text" class="form-control" th:field="*{bookName}" readonly >
+            </div>
+            <div class="form-group">
+                <label for="book_number">Number</label>
+                <input id="book_number" type="text" class="form-control" th:field="*{quantity}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="book_codeTextId">Code text Id</label>
+                <input id="book_codeTextId" type="text" class="form-control" th:field="*{codeText.codeText_id}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="book_codeText">Code text to return</label>
+                <input id="book_codeText" type="text" class="form-control" th:field="*{codeText.codeLendReturn}">
+            </div>
+            <div>
+                <input type="submit" value="Return" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+</div>
+
+
+</body>
+</html>

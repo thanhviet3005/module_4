@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout::head">
+</head>
+<body>
+
+<div class="container">
+    <div class="notify">
+        <div th:if="${statusMsg}">
+            <span th:text="${statusMsg}"></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <a th:href="@{/student/create}" class="btn btn-primary">Create new student</a>
+        </div>
+    </div>
+    <table class="table table-hover table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="student:${studentList}">
+            <td  scope="row" th:text="${student.getId()}"></td>
+            <td th:text="${student.getName()}"></td>
+            <td>
+                <a th:href="@{/book/{id}/update(id=${student.getId()})}"
+                   class="btn btn-primary" href="#" role="button">Edit</a>
+                <a th:href="@{/book/{id}/remove(id=${student.getId()})}"
+                   class="btn btn-primary" href="#" role="button">Delete</a>
+                <a th:href="@{/book/{id}/detail(id=${student.getId()})}"
+                   class="btn btn-primary" href="#" role="button">View</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+</body>
+</html>

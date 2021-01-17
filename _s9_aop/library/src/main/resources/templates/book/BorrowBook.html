@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout::head">
+</head>
+<body>
+
+<div class="container">
+    <div class="col-4">
+        <form th:action="@{/book/borrow}" method="post" th:object="${book}">
+            <div class="form-group">
+                <label for="book_id">Id</label>
+                <input id="book_id" type="text" class="form-control" th:field="*{id}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="book_name">Book name</label>
+                <input id="book_name" type="text" class="form-control" th:field="*{bookName}" readonly >
+            </div>
+            <div class="form-group">
+                <label for="book_number">Number</label>
+                <input id="book_number" type="text" class="form-control" th:field="*{number}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="book_number">Number</label>
+                <input id="book_number" type="text" class="form-control" th:field="*{number}" readonly>
+            </div>
+
+            <div>
+                <input type="submit" value="Add" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

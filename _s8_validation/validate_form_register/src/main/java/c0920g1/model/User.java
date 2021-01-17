@@ -109,9 +109,6 @@ public class User implements Validator {
         if(!email.matches("^\\w+@[a-zA-Z0-9]+(\\.[a-zA-Z0-9]+)$")){
             errors.rejectValue("email", "email.matches");
         }
-//        if(user.getAge()<18){
-//            errors.rejectValue("age", "ageNotEnough");
-//        }
 
 
     }
