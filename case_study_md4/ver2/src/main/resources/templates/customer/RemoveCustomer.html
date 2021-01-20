@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout::head">
+</head>
+<body>
+
+<div class="container">
+    <div class="col-4">
+        <p class="h2">Remove customer</p>
+        <form th:action="@{/customer/remove}" method="post" th:object="${customer}">
+            <div class="form-group">
+                <label for="customer_id">Customer Id</label>
+                <input id="customer_id" type="text" class="form-control" th:field="*{customerId}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="customer_code">Customer code</label>
+                <input id="customer_code" type="text" class="form-control" th:field="*{customerCode}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="customer_type">Customer type</label>
+                <input id="customer_type" type="text" class="form-control" th:field="*{customerType.customerTypeName}" readonly/>
+            </div>
+            <div class="form-group">
+                <label for="customer_name">Customer name</label>
+                <input id="customer_name" type="text" class="form-control" th:field="*{customerName}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="customer_birth_date">Customer birth date</label>
+                <input id="customer_birth_date" type="date" class="form-control" th:field="*{customerBirthDate}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="customer_gender">Customer gender</label>
+                <div id="customer_gender" th:switch="${customer.getCustomerGender()}">
+                    <span th:case="0" class="input-group-text">Female</span>
+                    <span th:case="1" class="input-group-text">Male</span>
+                    <span th:case="2" class="input-group-text">Other</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="customer_idCard">Customer Id card</label>
+                <input id="customer_idCard" type="text" class="form-control" th:field="*{customerIdCard}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="customer_phone">Customer phone</label>
+                <input id="customer_phone" type="text" class="form-control" th:field="*{customerPhone}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="customer_email">Customer email</label>
+                <input id="customer_email" type="text" class="form-control" th:field="*{customerEmail}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="customer_address">Customer address</label>
+                <input id="customer_address" type="text" class="form-control" th:field="*{customerAddress}" readonly>
+            </div>
+            <div>
+                <input type="submit" value="Remove" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--                -->
+<!--                <div class="input-group mb-3">-->
+<!--                    <div class="input-group-prepend">-->
+<!--                        <label class="input-group-text" for="inputGroupSelect01">Option</label>-->
+<!--                    </div>-->
+
+<!--                    <select class="custom-select" id="inputGroupSelect01" th:switch="${customer.getCustomerGender()}" readonly>-->
+<!--                        <option th:value="0">Male</option>-->
+<!--                        <option th:value="1">Female</option>-->
+<!--                        <option th:value="2">Other</option>-->
+<!--                    </select>-->
+
+
+
+</body>
+</html>

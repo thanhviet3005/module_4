@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout::head">
+</head>
+<body>
+
+<div class="container">
+    <div class="notify">
+        <div th:if="${statusmsg}">
+            <span th:text="${statusmsg}"></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <a th:href="@{/bill/create}" class="btn btn-primary">Create new borrow bill</a>
+        </div>
+    </div>
+
+    <table class="table table-hover table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Book id</th>
+            <th scope="col">Book title </th>
+            <th scope="col">Book quantity</th>
+            <th scope="col">Borrow bill id</th>
+            <th scope="col">Borrow bill code</th>
+            <th scope="col">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="bill:${borrowBillList}">
+            <td  scope="row" th:text="${bill.getBorrowId}"></td>
+            <td th:text="${bill.getBorrowCode()}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+</body>
+</html>

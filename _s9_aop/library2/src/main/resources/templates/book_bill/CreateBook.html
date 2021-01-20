@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout::head">
+</head>
+<body>
+
+<div class="container">
+    <div class="col-4">
+        <form th:action="@{/book/create}" method="post" th:object="${book}">
+            <div class="form-group">
+                <label for="book_id">Book Id</label>
+                <input id="book_id" type="text" class="form-control" th:field="*{id}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="book_title">Book title</label>
+                <input id="book_title" type="text" class="form-control" th:field="*{title}" required>
+            </div>
+            <div class="form-group">
+                <label for="book_quantity">Book quantity</label>
+                <input id="book_quantity" type="text" class="form-control" th:field="*{quantity}" required>
+            </div>
+            <div>
+                <input type="submit" value="Add" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

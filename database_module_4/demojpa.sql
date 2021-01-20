@@ -1,10 +1,5 @@
-create database _s7_springbootblog;
-
-insert into blog value (1, "vo lam truyen ky");
-select * from blog;
--- drop database _s8_validation;
-
+use case_study_md4;
+select * from customer;
 use _s9_aop;
-select * from `book`;
-select * from `bill_lend`;
-select * from `student`;
+select * from borrow_bill;
+select * from book;

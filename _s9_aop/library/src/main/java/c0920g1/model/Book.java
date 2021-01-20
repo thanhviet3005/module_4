@@ -1,24 +1,17 @@
 package c0920g1.model;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import java.util.Set;
 
 @Entity
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @NotEmpty
-    private String bookName;
-    @NotNull
-    private int number;
-
-    private String codeBorrow;
-
-    @OneToMany(mappedBy = "book")
-    private Set<BillLend> billLend;
+    private String title;
+    private int quantity;
+    @ManyToOne
+    @JoinColumn(name = "borrow_id", referencedColumnName = "borrowId")
+    private BorrowBill borrowBookCode;
 
     public Book() {
     }
@@ -31,35 +24,27 @@ public class Book {
         this.id = id;
     }
 
-    public String getBookName() {
-        return bookName;
+    public String getTitle() {
+        return title;
     }
 
-    public void setBookName(String bookName) {
-        this.bookName = bookName;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public int getNumber() {
-        return number;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
-    public Set<BillLend> getBillLend() {
-        return billLend;
+    public BorrowBill getBorrowBookCode() {
+        return borrowBookCode;
     }
 
-    public void setBillLend(Set<BillLend> billLend) {
-        this.billLend = billLend;
-    }
-
-    public String getCodeBorrow() {
-        return codeBorrow;
-    }
-
-    public void setCodeBorrow(String codeBorrow) {
-        this.codeBorrow = codeBorrow;
+    public void setBorrowBookCode(BorrowBill borrowBookCode) {
+        this.borrowBookCode = borrowBookCode;
     }
 }

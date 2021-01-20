@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create bill borrow book</title>
+</head>
+<body>
+
+<div class="container">
+    <div class="col-4">
+        <form th:action="@{/borrow/create}" method="post" th:object="${borrowBill}">
+            <div class="form-group">
+                <label for="book_id">Book Id</label>
+                <input id="book_id" type="text" class="form-control" th:text="${book.getId()}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="book_title">Book title</label>
+                <input id="book_title" type="text" class="form-control" th:text="${book.getTitle()}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="book_quantity">Book quantity</label>
+                <input id="book_quantity" type="text" class="form-control" th:text="${book.getQuantity}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="customer_type_name">Borrow code</label>
+                <input id="customer_type_name" type="text" class="form-control" th:field="*{borrowCode}"
+                       th:value="${book.getBorrowBookCode().getBorrowCode()}" required >
+            </div>
+            <div>
+                <input type="submit" value="Add" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

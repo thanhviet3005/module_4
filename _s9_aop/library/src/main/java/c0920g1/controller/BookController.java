@@ -1,7 +1,9 @@
 package c0920g1.controller;
 
 import c0920g1.model.Book;
+import c0920g1.model.BorrowBill;
 import c0920g1.service.BookService;
+import c0920g1.service.BorrowBookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -14,52 +16,47 @@ import java.util.List;
 @RequestMapping("/book")
 public class BookController {
     @Autowired
+    private BorrowBookService borrowBookService;
+    @Autowired
     private BookService bookService;
 
     @GetMapping("")
     public ModelAndView getPageListBook(){
         List<Book> bookList = bookService.findAll();
-        ModelAndView modelAndView = new ModelAndView("/book/ListBook", "bookList", bookList);
+        List<BorrowBill> borrowBillList = borrowBookService.findAll();
+        ModelAndView modelAndView = new ModelAndView("/book_bill/ListBook");
+        modelAndView.addObject("bookList", bookList);
+        modelAndView.addObject("borrowBillList", borrowBillList);
         return modelAndView;
     }
 
     @GetMapping("/create")
     public ModelAndView getPageCreateBook(){
-        Book book = new Book();
-        ModelAndView modelAndView = new ModelAndView("/book/CreateBook", "book", book);
-        return modelAndView;
+        return new ModelAndView("/book_bill/CreateBook", "book", new Book());
+    }
+
+    @PostMapping("/create")
+    public String saveBook(@ModelAttribute Book book, RedirectAttributes redirectAttributes){
+        bookService.save(book);
+        redirectAttributes.addFlashAttribute("statusmsg", "Create book success");
+        return "redirect:/book";
     }
 
     @GetMapping("/{id}/borrow")
-    public ModelAndView getPageBorrowBook(@PathVariable int id){
+    public ModelAndView getPageCreateBorrowBill(@PathVariable int id){
+        BorrowBill borrowBill = new BorrowBill();
         Book book = bookService.findById(id);
-        ModelAndView modelAndView = new ModelAndView("/book/BorrowBook", "book", book);
+        String codeBorrow = Math.random() * 10000 + "";
+        book.getBorrowBookCode().setBorrowCode(codeBorrow);
+        ModelAndView modelAndView = new ModelAndView("/book_bill/CreateBill", "book", book);
+        modelAndView.addObject("borrowBill", borrowBill);
         return modelAndView;
     }
 
-    @PostMapping(value = "/borrow")
-    public String borrowBook(@ModelAttribute Book book){
-
-
-    }
-
-    @PostMapping(value = "/create")
-    public String saveBook(@ModelAttribute Book book, RedirectAttributes redirectAttributes){
-        bookService.save(book);
-        redirectAttributes.addFlashAttribute("statusMsg", "Add book success");
-        return "redirect:";
-    }
 
 
 
 
 
 
-
-
-
-
-
-//__+__+__+__+__+__+__+__+__+__
-//__+__+__+__+__+__+__+__+__+__
 }
