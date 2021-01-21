@@ -2,114 +2,59 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1dfc6c5-0ede-4f15-a79c-d94175214037" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../_s12_ajax/phone_manager/src/main/java/AppInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_s12_ajax/phone_manager/src/main/java/ApplicationConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_s12_ajax/phone_manager/src/main/java/controller/HomeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_s12_ajax/phone_manager/src/main/java/controller/SmartphoneController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_s12_ajax/phone_manager/src/main/java/model/Smartphone.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_s12_ajax/phone_manager/src/main/java/repository/SmartphoneRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_s12_ajax/phone_manager/src/main/java/service/SmartphoneService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_s12_ajax/phone_manager/src/main/java/service/SmartphoneServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_s12_ajax/phone_manager/src/main/webapp/WEB-INF/views/phones/edit-phone.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../_s12_ajax/phone_manager/src/main/webapp/layout.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../library/src/main/java/c0920g1/controller/BorrowBillController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../library/src/main/java/c0920g1/model/BorrowBill.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../library/src/main/java/c0920g1/repository/BorrowBookRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../library/src/main/java/c0920g1/service/BorrowBookService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../library/src/main/java/c0920g1/service/Impl/BorrowBookServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../library/src/main/resources/templates/book_bill/CreateBill.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../library/src/main/resources/templates/book_bill/ListBook.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/c0920g1/aop/BookCountAspect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/c0920g1/controller/BookController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/c0920g1/controller/BorrowBillController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/c0920g1/model/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/c0920g1/model/BorrowBill.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/c0920g1/repository/BookRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/c0920g1/repository/BorrowBookRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/c0920g1/service/BookService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/c0920g1/service/BorrowBookService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/c0920g1/service/Service.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/c0920g1/service/impl/BookServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/c0920g1/service/impl/BorrowBookServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/book_bill/CreateBill.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/book_bill/CreateBook.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/book_bill/ListBook.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/book_bill/ListBorrowBill.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/layout.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case_study_md4/ver2/src/main/java/c0920g1/config/WebValidationConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case_study_md4/ver2/src/main/java/c0920g1/controller/CustomerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case_study_md4/ver2/src/main/java/c0920g1/controller/CustomerTypeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case_study_md4/ver2/src/main/java/c0920g1/model/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case_study_md4/ver2/src/main/java/c0920g1/model/CustomerType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case_study_md4/ver2/src/main/java/c0920g1/repository/CustomerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case_study_md4/ver2/src/main/java/c0920g1/repository/CustomerTypeRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case_study_md4/ver2/src/main/java/c0920g1/service/CustomerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case_study_md4/ver2/src/main/java/c0920g1/service/CustomerTypeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case_study_md4/ver2/src/main/java/c0920g1/service/Service.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case_study_md4/ver2/src/main/java/c0920g1/service/impl/CustomerServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case_study_md4/ver2/src/main/java/c0920g1/service/impl/CustomerTypeServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case_study_md4/ver2/src/main/java/c0920g1/validation/ValidationMassage.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case_study_md4/ver2/src/main/resources/templates/customer/ListCustomer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case_study_md4/ver2/src/main/resources/templates/customer/UpdateCustomer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../case_study_md4/ver2/src/main/resources/templates/layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../library/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../library/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/../library/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library/src/main/java/c0920g1/DemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../library/src/main/java/c0920g1/DemoApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library/src/main/java/c0920g1/config/ValidationConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library/src/main/java/c0920g1/controller/BillLendController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library/src/main/java/c0920g1/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../library/src/main/java/c0920g1/controller/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library/src/main/java/c0920g1/controller/StudentController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library/src/main/java/c0920g1/model/BillLend.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library/src/main/java/c0920g1/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/../library/src/main/java/c0920g1/model/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library/src/main/java/c0920g1/model/Student.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library/src/main/java/c0920g1/repository/BillLendRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library/src/main/java/c0920g1/repository/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../library/src/main/java/c0920g1/repository/BookRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library/src/main/java/c0920g1/repository/StudentRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library/src/main/java/c0920g1/service/BillLendService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library/src/main/java/c0920g1/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../library/src/main/java/c0920g1/service/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library/src/main/java/c0920g1/service/Impl/BillLendServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library/src/main/java/c0920g1/service/Impl/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../library/src/main/java/c0920g1/service/Impl/BookServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library/src/main/java/c0920g1/service/Impl/StudentServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library/src/main/java/c0920g1/service/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/../library/src/main/java/c0920g1/service/Service.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library/src/main/java/c0920g1/service/StudentService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library/src/main/java/c0920g1/validation/ValidationMassage.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library/src/main/resources/templates/bill_lend/CreateBill.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library/src/main/resources/templates/bill_lend/ListBill.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library/src/main/resources/templates/book/BorrowBook.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library/src/main/resources/templates/book/CreateBook.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library/src/main/resources/templates/book/ListBook.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library/src/main/resources/templates/student/CreateStudent.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library/src/main/resources/templates/student/ListStudent.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library/src/test/java/c0920g1/DemoApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../library/src/test/java/c0920g1/DemoApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../_s10_session_cookies/cart/src/main/java/c0920g1/CookiesSessionApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../_s10_session_cookies/cart/src/main/java/c0920g1/controller/ProductController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../_s10_session_cookies/cart/src/main/java/c0920g1/model/Item.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../_s10_session_cookies/cart/src/main/java/c0920g1/model/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../_s10_session_cookies/cart/src/main/java/c0920g1/repository/ProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../_s10_session_cookies/cart/src/main/java/c0920g1/service/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../_s10_session_cookies/cart/src/main/java/c0920g1/service/Service.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../_s10_session_cookies/cart/src/main/java/c0920g1/service/impl/ProductServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../_s10_session_cookies/cart/src/main/resources/templates/layout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../_s10_session_cookies/cart/src/main/resources/templates/product/CartProduct.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../_s10_session_cookies/cart/src/main/resources/templates/product/CreateProduct.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../_s10_session_cookies/cart/src/main/resources/templates/product/DetailProduct.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../_s10_session_cookies/cart/src/main/resources/templates/product/ListProduct.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_s10_session_cookies/save_login/build/classes/java/main/AppConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_s10_session_cookies/save_login/build/classes/java/main/AppInitializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_s10_session_cookies/save_login/build/classes/java/main/controller/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_s10_session_cookies/save_login/build/classes/java/main/model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_s10_session_cookies/save_login/build/libs/save_login-1.0-SNAPSHOT.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_s10_session_cookies/save_login/build/tmp/war/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_s10_session_cookies/view_count/build/classes/java/main/AppConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_s10_session_cookies/view_count/build/classes/java/main/AppInitializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_s10_session_cookies/view_count/build/classes/java/main/controller/CounterController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_s10_session_cookies/view_count/build/classes/java/main/model/MyCounter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_s10_session_cookies/view_count/build/libs/view_count-1.0-SNAPSHOT.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_s10_session_cookies/view_count/build/tmp/war/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/src/main/java/c0920g1/DemoApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/src/main/java/c0920g1/controller/BookController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/src/main/java/c0920g1/controller/BorrowBillController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/src/main/java/c0920g1/model/Book.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/src/main/java/c0920g1/model/BorrowBill.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/src/main/java/c0920g1/repository/BookRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/src/main/java/c0920g1/repository/BorrowBookRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/src/main/java/c0920g1/service/BookService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/src/main/java/c0920g1/service/BorrowBookService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/src/main/java/c0920g1/service/Impl/BookServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/src/main/java/c0920g1/service/Impl/BorrowBookServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/src/main/java/c0920g1/service/Service.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/src/main/resources/templates/book_bill/CreateBill.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/src/main/resources/templates/book_bill/CreateBook.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/src/main/resources/templates/book_bill/ListBook.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/src/main/resources/templates/book_bill/ListBorrowBill.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/src/main/resources/templates/layout.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/src/test/java/c0920g1/DemoApplicationTests.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library3/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library3/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library3/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library3/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library3/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library3/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library3/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library3/src/main/java/c0920g1/DemoApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library3/src/main/java/c0920g1/config/WebValidationConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library3/src/main/java/c0920g1/controller/BookController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library3/src/main/java/c0920g1/model/Book.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library3/src/main/java/c0920g1/model/CodeText.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library3/src/main/java/c0920g1/repository/BookRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library3/src/main/java/c0920g1/repository/CodeTextRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library3/src/main/java/c0920g1/service/BookService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library3/src/main/java/c0920g1/service/CodeTextService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library3/src/main/java/c0920g1/service/Service.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library3/src/main/java/c0920g1/service/impl/BookServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library3/src/main/java/c0920g1/service/impl/CodeTextImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library3/src/main/resources/ValidationMassage.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library3/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library3/src/main/resources/templates/book/BorrowBook.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library3/src/main/resources/templates/book/CreateBook.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library3/src/main/resources/templates/book/ListBook.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library3/src/main/resources/templates/book/ReturnBook.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library3/src/main/resources/templates/book/layout.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library3/src/test/java/c0920g1/DemoApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/c0920g1/controller/BorrowBillController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/c0920g1/controller/BorrowBillController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../database_module_4/demojpa.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../database_module_4/demojpa.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -179,6 +124,15 @@
       <workItem from="1611078646902" duration="1713000" />
       <workItem from="1611113116214" duration="2503000" />
       <workItem from="1611124734003" duration="1610000" />
+      <workItem from="1611151601314" duration="21000" />
+      <workItem from="1611151675607" duration="65000" />
+      <workItem from="1611155871203" duration="53000" />
+      <workItem from="1611156678537" duration="757000" />
+      <workItem from="1611159236422" duration="35000" />
+      <workItem from="1611159338773" duration="43000" />
+      <workItem from="1611161507188" duration="717000" />
+      <workItem from="1611197231933" duration="1080000" />
+      <workItem from="1611251833675" duration="203000" />
     </task>
     <servers />
   </component>
@@ -242,9 +196,9 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1235" height="203" key="GridCell.Tab.2.right/0.0.1280.680@0.0.1280.680" timestamp="1611080371732" />
-    <state x="333" y="164" key="com.intellij.ide.util.TipDialog" timestamp="1611124743633">
+    <state x="333" y="164" key="com.intellij.ide.util.TipDialog" timestamp="1611197715476">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="333" y="164" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1611124743633" />
+    <state x="333" y="164" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1611197715476" />
   </component>
 </project>

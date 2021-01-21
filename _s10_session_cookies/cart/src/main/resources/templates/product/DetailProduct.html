@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout::head">
+</head>
+<body>
+
+<div class="container">
+    <div class="col-sm-6">
+            <table class="table table-hover table-striped">
+                <tbody>
+                <tr>
+                    <td>
+                        <img th:src="${item.product.getProductImage()}" style="height: 100px"><br>
+                        <span th:text="${item.product.getProductCode()}"></span><br>
+                        <span th:text="${item.product.getProductName()}"></span><br>
+                        <span th:text="${item.product.getProductPrice()}"></span><br>
+<!--  De {id} tren action thi khi gui form controller se khong dung @PathVariable de bat duoc doi tuong
+
+-->
+                        <form action="/product/buy" method="post">
+                            <div class="form-group">
+                                <label>Product Id</label>
+                                <input type="text" th:name="productId" th:value="${item.product.getProductId()}"
+                                       class="form-control" readonly/>
+                                <label>Product quantity</label>
+                                <input type="text" th:name="quantity" class="form-control" required>
+                                <input type="submit" value="Buy" class="btn btn-primary"/>
+                            </div>
+                        </form>
+                    </td>
+                    <td>
+                        <span th:text="${item.product.getProductDescription()}"></span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+    </div>
+</div>
+
+
+
+</body>
+</html>

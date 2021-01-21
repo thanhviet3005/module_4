@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout::head">
+</head>
+<body>
+
+<div class="container">
+    <div class="notify">
+        <div th:if="${statusmsg}">
+            <span th:text="${statusmsg}" style="color: darkblue"></span>
+        </div>
+    </div>
+    <nav class="navbar navbar-light bg-light justify-content-between">
+        <a th:href="@{/product/create}" class="btn btn-primary">Create product</a>
+    </nav>
+    <table class="table table-hover table-striped">
+        <tbody>
+        <tr>
+            <td  scope="row" th:each="product:${productList}">
+                <img th:src="${product.getProductImage()}" style="height: 100px"><br>
+                <span th:text="${product.getProductName()}"></span><br>
+                <span th:text="${product.getProductPrice()}"></span><br>
+                <a th:href="@{/product/{id}/detail(id=${product.getProductId()})}"
+                   class="btn btn-primary" href="#" role="button">Detail</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
+

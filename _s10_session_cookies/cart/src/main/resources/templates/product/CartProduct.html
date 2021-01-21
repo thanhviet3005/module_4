@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout::head">
+</head>
+<body>
+
+<div class="container">
+    <div class="notify">
+        <div th:if="${statusmsg}">
+            <span th:text="${statusmsg}" style="color: darkblue"></span>
+        </div>
+    </div>
+    <div class="col-4">
+        <div  th:if="${totalPrice}" class="form-group">
+            <input type="text" th:value="${'Total bill = ' + totalPrice}"
+                   class="form-control" style="color: darkblue" readonly>
+        </div>
+    </div>
+    <nav class="navbar navbar-light bg-light justify-content-between">
+        <a th:href="@{/product}" class="btn btn-primary">Back to main list</a>
+
+        <form class="form-inline">
+            <a th:href="@{/product/removeAll}" class="btn btn-warning">Remove all in cart</a>
+        </form>
+    </nav>
+    <table class="table table-hover table-striped">
+        <tbody>
+        <tr>
+            <td scope="row" th:each="item: ${carts}">
+                <img th:src="${item.product.getProductImage()}" style="height: 100px"><br>
+                <span th:text="${'Product name: ' + item.product.getProductName()}"></span><br>
+                <span th:text="${'Price: ' + item.product.getProductPrice()}"></span><br>
+                <span th:text="${'Quantity: ' + item.getQuantity()}"></span><br>
+                <span th:text="${'Product id: ' + item.product.getProductId()}"></span><br>
+                    <a th:href="@{/product/{id}/remove(id=${item.product.getProductId()})}"
+                       class="btn btn-warning" href="#" role="button">Remove</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

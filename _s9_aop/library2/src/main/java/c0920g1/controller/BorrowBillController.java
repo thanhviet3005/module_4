@@ -55,17 +55,18 @@ public class BorrowBillController {
         if(borrowBill==null){
             redirectAttributes.addFlashAttribute("statusmsg", "Wrong borrow code ");
             return "redirect:/book";
-        }
-        for (Book book : bookList) {
-            if(book.getTitle().equals(borrowBill.getTitleBook())){
-                book.setQuantity(book.getQuantity()+1);
-                bookService.save(book);
-                break;
+        }else {
+            for (Book book : bookList) {
+                if (book.getTitle().equals(borrowBill.getTitleBook())) {
+                    book.setQuantity(book.getQuantity() + 1);
+                    bookService.save(book);
+                    break;
+                }
             }
+            borrowBookService.removeByBorrowBookBill(borrowBill);
+            redirectAttributes.addFlashAttribute("statusmsg", "Return success ");
+            return "redirect:/book";
         }
-        borrowBookService.removeByBorrowBookBill(borrowBill);
-        redirectAttributes.addFlashAttribute("statusmsg", "Return success ");
-        return "redirect:/book";
     }
 
 
