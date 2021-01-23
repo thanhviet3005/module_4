@@ -1,7 +1,5 @@
 package c0920g1.controller;
 
-import c0920g1.model.Blog;
-import c0920g1.model.Category;
 import c0920g1.service.BlogService;
 import c0920g1.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,5 +1,6 @@
 package c0920g1.service.impl;
 
+import c0920g1.model.Category;
 import c0920g1.repository.CategoryRepository;
 import c0920g1.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
 @Primary
 public class CategoryServiceImpl implements CategoryService {

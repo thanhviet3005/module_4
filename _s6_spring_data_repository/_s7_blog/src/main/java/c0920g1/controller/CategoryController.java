@@ -1,6 +1,5 @@
 package c0920g1.controller;
 
-import c0920g1.model.Category;
 import c0920g1.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

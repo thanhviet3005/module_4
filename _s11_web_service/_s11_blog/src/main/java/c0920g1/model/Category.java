@@ -1,5 +1,7 @@
 package c0920g1.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -9,6 +11,8 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int categoryId;
     private String categoryName;
+
+    @JsonManagedReference
     @OneToMany(mappedBy = "category")
     private List<Blog> blogList;
 
