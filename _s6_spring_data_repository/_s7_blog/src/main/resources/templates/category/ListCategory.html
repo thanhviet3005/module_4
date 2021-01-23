@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout::head">
+</head>
+<body>
+
+<div class="container">
+    <div class="notify">
+        <div th:if="${statusmsg}">
+            <span th:text="${statusmsg}" style="color: darkblue"></span>
+        </div>
+    </div>
+    <nav class="navbar navbar-light bg-light justify-content-between">
+        <a th:href="@{/category/create}" class="btn btn-primary">Create new category</a>
+
+    </nav>
+    <table class="table table-hover table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Category id</th>
+            <th scope="col">Category code</th>
+            <th scope="col">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="category:${categoryList}">
+            <td scope="row" th:text="${category.getCategoryId()}"></td>
+            <td th:text="${category.getCategoryName()}"></td>
+            <td>
+                <a th:href="@{/category/{id}/update(id=${category.getCategoryId()})}"
+                   class="btn btn-warning" href="#" role="button">Update</a>
+                <a th:href="@{/category/{id}/remove(id=${category.getCategoryId()})}"
+                   class="btn btn-danger" href="#" role="button">Remove</a>
+                <a th:href="@{/category/{id}/detail(id=${category.getCategoryId()})}"
+                   class="btn btn-info" href="#" role="button">Detail</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+</body>
+</html>

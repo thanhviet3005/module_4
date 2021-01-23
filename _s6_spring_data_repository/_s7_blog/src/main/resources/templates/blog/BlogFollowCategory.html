@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout::head">
+</head>
+<body>
+
+<div class="container">
+    <div class="notify">
+        <div th:if="${statusmsg}">
+            <span th:text="${statusmsg}" style="color: darkblue"></span>
+        </div>
+    </div>
+    <nav class="navbar navbar-light bg-light justify-content-between">
+        <a th:href="@{/}" class="btn btn-outline-primary">Back to main page </a>
+
+        <form class="form-inline" th:action="@{/blog/title/search}" method="get">
+            <input type="text" th:name="search" placeholder="Search by name" class="form-control mr-sm-2" >
+            <input class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Search"/>
+        </form>
+    </nav>
+    <h2 th:text="${category.getCategoryName()}"></h2>
+    <table class="table table-hover table-striped">
+        <tbody>
+        <tr th:each="blog:${category.getBlogList()}">
+            <td>
+                <a th:href="@{/blog/{idCategory}/{idBlog}/detailBlog(idCategory=${category.getCategoryId()}, idBlog=${blog.getBlogId()})}">
+                    <span th:text="${blog.getBlogTitle()}"></span>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+</body>
+</html>
+
+<!--        <thead>-->
+<!--        <tr>-->
+<!--            <th th:text="${category.getCategoryName()}""></th>-->
+<!--            <th scope="col">Blog title</th>-->
+<!--            <th scope="col">Action</th>-->
+<!--        </tr>-->
+<!--        </thead>-->

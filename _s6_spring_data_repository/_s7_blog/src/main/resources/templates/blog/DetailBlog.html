@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout::head">
+</head>
+<body>
+
+<div class="container">
+    <div class="col-2">
+        <table class="table table-hover table-striped">
+            <thead>
+            <tr>
+                <th scope="col">Category name</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="category:${categoryList}">
+                <td>
+                    <a th:href="@{/category/{id}/blogFollowCategory(id=${category.getCategoryId()})}">
+                        <span th:text="${category.getCategoryName()}"></span>
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="container">
+    <div class="col-4">
+        <nav class="navbar navbar-light bg-light justify-content-between">
+            <a th:href="@{/}" class="btn btn-outline-primary">Back to main page </a>
+
+            <form class="form-inline" th:action="@{/blog/title/search}" method="get">
+                <input type="text" th:name="search" placeholder="Search by name" class="form-control mr-sm-2" >
+                <input class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Search"/>
+            </form>
+        </nav>
+        <p class="h2" th:text="${'Category: ' + categoryName}"></p>
+        <form th:object="${blog}">
+            <div class="form-group">
+                <label for="id">Blog Id</label>
+                <input id="id" type="text" class="form-control" th:field="*{blogId}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="blogTitle">Blog title</label>
+                <input id="blogTitle" type="text" class="form-control" th:field="*{blogTitle}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="dateCreate">Blog date created</label>
+                <input id="dateCreate" type="text" class="form-control" th:field="*{blogDateCreate}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="blogContent">Blog content</label>
+                <input id="blogContent" type="text" class="form-control" th:field="*{blogContent}" readonly>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

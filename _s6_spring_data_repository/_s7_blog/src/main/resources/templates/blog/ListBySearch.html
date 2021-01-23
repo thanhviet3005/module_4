@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout::head">
+</head>
+<body>
+
+<div class="container">
+    <div class="notify">
+        <div th:if="${statusmsg}">
+            <span th:text="${statusmsg}" style="color: darkblue"></span>
+        </div>
+    </div>
+    <nav class="navbar navbar-light bg-light justify-content-between">
+        <a th:href="@{/}" class="btn btn-outline-primary">Back to main page </a>
+
+        <form class="form-inline" th:action="@{/blog/title/search}" method="get">
+            <input type="text" th:name="search" placeholder="Search by name" class="form-control mr-sm-2" >
+            <input class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Search"/>
+        </form>
+    </nav>
+    <table id="example" class="table table-hover table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Blog id</th>
+            <th scope="col">Blog title</th>
+            <th scope="col">Blog content</th>
+            <th scope="col">Blog date create</th>
+            <th scope="col">Category</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="blog:${blogList}">
+            <td scope="row" th:text="${blog.getBlogId()}"></td>
+            <td th:text="${blog.getBlogTitle()}"></td>
+            <td th:text="${blog.getBlogContent()}"></td>
+            <td th:text="${blog.getBlogDateCreate()}"></td>
+            <td th:text="${blog.getCategory().categoryName}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $('#example').DataTable();
+    } );
+</script>
+
+
+
+
+</body>
+</html>
